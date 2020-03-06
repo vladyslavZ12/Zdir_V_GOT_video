@@ -5,9 +5,10 @@
       houseVideo = document.querySelector("video"),
       playButton = document.querySelector(".play-button"),
       pauseButton = document.querySelector(".pause-button"),
-      rewindButton = document.querySelector(".rewind-button");
-      currentHouseName = document.querySelector("h1")
-      houseDescription = document.querySelector(".house-info");
+      rewindButton = document.querySelector(".rewind-button"),
+      currentHouseName = document.querySelector("h1"),
+      houseDescription = document.querySelector(".house-info"),
+      imageContainer = document.querySelector("#houseImages");
   
   const houseData = [
      ["Stark", `House Stark of Winterfell is a Great House of Westeros, ruling over the vast region known as the North from their seat in Winterfell. It is one of the oldest lines of Westerosi nobility by far, claiming a line of descent stretching back over eight thousand years. Before the Targaryen conquest, as well as during the War of the Five Kings and Daenerys Targaryen's invasion of Westeros, the leaders of House Stark ruled over the region as the Kings in the North.`], 
@@ -72,10 +73,21 @@ House Greyjoy's sigil is traditionally a golden kraken on a black field. Their h
     houseVideo. play();
     houseVideo.currentTime = 0;
   }
-
   
+  function animateBanners() {
+    let offsetWidth = 600;
+    let multiplier = this.dataset.offset;
+    let newPosition = offsetWidth * multiplier;
+
+    //debugger;
+
+    imageContainer.style.right = `${newPosition}px`;
+  }
 
   sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
+
+
+  sigilButtons.forEach(button => button.addEventListener("click", animateBanners));
   closeButton.addEventListener("click",hideLightBox);
   pauseButton.addEventListener("click", pause);
   rewindButton.addEventListener("click", rewind);
