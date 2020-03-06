@@ -8,7 +8,21 @@
       rewindButton = document.querySelector(".rewind-button");
   function showLightBox() {
     //debugger;
+
+
+    let houseName = this.className.split(" ")[1];
+
+    let newSource = houseName.charAt(0).toUpperCase() + houseName.slice(1);
+
+    let targetSource = `video/House-${newSource}.mp4`;
+
+    //debugger;
+
+
     lightbox.classList.add("show-lightbox");
+
+    houseVideo.src = targetSource;
+    houseVideo.load();
     houseVideo.play();
   }
 
@@ -17,6 +31,12 @@
      houseVideo.pause();
       houseVideo.currentTime = 0;
   }
+
+
+  function play() {
+    houseVideo.play();
+  }
+
 
   function pause() {
     houseVideo.pause();
