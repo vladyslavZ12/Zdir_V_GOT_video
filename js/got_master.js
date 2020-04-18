@@ -40,7 +40,7 @@ House Greyjoy's sigil is traditionally a golden kraken on a black field. Their h
     let newSource = houseName.charAt(0).toUpperCase() + houseName.slice(1);
     currentHouseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
     houseDescription.textContent = `${houseData[this.dataset.offset][1]}`;
-
+setTimeout(function(){
     let targetSource = `video/House-${newSource}.mp4`;
 
     //debugger;
@@ -51,6 +51,7 @@ House Greyjoy's sigil is traditionally a golden kraken on a black field. Their h
     houseVideo.src = targetSource;
     houseVideo.load();
     houseVideo.play();
+  }, 5000);
   }
 
   function hideLightBox() {
@@ -66,6 +67,7 @@ House Greyjoy's sigil is traditionally a golden kraken on a black field. Their h
 
 
   function pause() {
+    paused = true;
     houseVideo.pause();
   }
 

@@ -111,17 +111,23 @@ display:none;
 }
 
 .close-button{
+  
   color: white;
   font-size: 2em;
   padding: 10px;
-  float: right:30px;
+  float: right;
   padding-right: 30px;
   padding-top: 20px;
   cursor: pointer;
+  margin-right: 50px;
 }
 
 
+
 video {
+	
+	display: flex;
+	margin:0 auto;
 	width: 80%;
 	margin-top: 10%;
 	border: thin solid #949393;
@@ -137,3 +143,10 @@ video {
     margin: 1.5em auto;
 
 }
+
+.vid-controls{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
